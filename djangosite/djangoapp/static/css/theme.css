@@ -1,0 +1,278 @@
+	
+body, pre, textarea {
+	font-family: "Trebuchet MS", Arial, Sans-serif;
+}
+
+
+h2 {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+h3, p, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+h5 {
+	border-bottom: 1px solid #CCC;
+	padding-bottom: 3px;
+}
+
+pre {
+	margin: 0 0 5px 0;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+h4 {
+	font-size: 13px;
+}
+
+p, li, pre, dd, label, input, textarea {
+	font-size: 13px;
+}
+
+pre {
+	color: #666666;
+	font-family: monospace;
+	font-size: 12px;
+}
+
+
+#wrapper {
+	width: 500px;
+	margin: 0 auto;
+}
+
+ul#navigation {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	height: 40px;
+}
+
+ul#navigation li {
+	float: left;
+	display: block;
+	width: 110px;
+	text-align: center;
+	background:  #f0f0f0;
+	margin: 0 10px 0 0;
+	
+}
+
+ul#navigation li a {
+	padding: 5px;
+	color: #000;
+	font-size: 14px;
+	text-decoration: none;
+	display: block;
+
+}
+
+ul#navigation li a:hover {
+	background: #CCC;
+}
+
+
+.clr {
+	clear: both;
+}
+
+a.paging {
+	font-weight: bold;
+	color: #a7ef01;
+}
+
+a.paging {
+	font-size: 11px;
+	margin: 0 10px 0 0;
+}
+
+#filesDisplay, #donate {
+	padding: 10px;
+	margin-top: 20px;
+	background: #f9f9f9;
+	border: 1px solid #f3f3f3;
+}
+
+.configurationoption h5 {
+	margin-bottom: 3px;
+}
+
+.configurationoption p {
+	margin: 0;
+}
+
+.configurationoption ul {
+	margin: 5px 0;
+	padding: 0;
+	list-style: none;
+}
+
+.configurationoption strong {
+	color: #c21515;
+}
+
+.configurationoption ul strong {
+	color: #000;
+}
+
+.configurationexample {
+	background: #f9f9f9;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.configurationexample p, h6 {
+	font-size: 11px;
+}
+
+.downloadbtn {
+	display: block;
+	background: url(/images/folder_go.png) no-repeat 0 2px;
+	padding: 0 0 0 20px;
+	margin: 0 0 10px 0;
+	color: #000;
+	text-decoration: none;
+}
+
+.downloadbtn span {
+	color: #666;
+	font-size: 11px;
+}
+
+#downloadbox {
+	height: 70px;
+	background: #e7fb98;
+	padding: 10px;
+	margin: 0 0 10px 0;
+}
+
+#downloadbox h3 {
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+#downloadbox p {
+	color: #666;
+}
+
+#downloadbox a {
+	font-size: 15px;
+}
+
+#donate form {
+	display: block;
+	width: 100px;
+	float: left;
+}
+
+#donate p {
+	margin: 0;
+}
+
+dl#comments dt {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 13px;
+	height: 45px;
+	background: url(../images/common/comment-title-bg.png) no-repeat 20px 40px;
+}
+
+dl#comments dt span, dl#comments dd a.website,dl#comments dd  em {
+	display: block;
+	font-size: 70%;
+}
+
+dl#comments dd a {
+	margin-top: 5px;
+}
+
+dl#comments dd a,dl#comments dd  em {
+	color: #3e3e3e;
+	
+}
+
+dl#comments dd {
+	margin: 0 0 15px 0;
+	padding: 10px;
+	background: #e4ff91;
+	overflow: hidden;
+}
+
+#commentForm fieldset {
+	border: 0;
+	padding: 0;
+	margin: 20px 0 0 0;
+}
+
+#commentForm fieldset label {
+	display: block;
+	float: left;
+	clear: right;
+	width: 180px;
+	margin: 0 0 10px 0;
+}
+
+#commentForm fieldset textarea {
+	clear: right;
+	margin: 0 0 10px 0;
+	width: 400px;
+	height: 150px;
+}
+
+#adwords {
+	margin: 0 0 20px 0;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	padding: 5px 0;
+}
+
+/* SWFUpload CSS */
+
+#filesDisplay {
+	padding: 10px;
+	margin-top: 20px;
+	background: #f9f9f9;
+	border: 1px solid #f3f3f3;
+	display: none;
+}
+
+#SWFUpload {
+	margin-left: 20px;
+}
+
+#mmUploadFileListing {
+	margin: 0;
+	padding: 0;
+}
+
+
+a.SWFUploadLink {
+width: 300px;
+height: 100px;
+background: url(../images/custom_button.png) no-repeat;
+display: block;
+}
+
+a.SWFUploadLink:hover {
+background: url(../images/custom_button_over.png) no-repeat;
+}
+
+.disabled {
+	text-decoration: line-through !important;
+}
+
+.newitem {
+	background: #caff4d;
+}
+
+a.whatsnew {
+	font-size: 11px !important;
+	color: #000;
+}

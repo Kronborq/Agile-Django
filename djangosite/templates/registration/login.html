@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="/profile">My profile</a></li>
+          <li><a href="/team">My team</a></li>
+        {% endif %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+          <li>User: {{ user.get_username }}</li>
+          <li><a href="{% url 'logout'%}?next={{request.path}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        {% else %}
+           <li class="active"><a href="{% url 'login'%}?next={{request.path}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <h4>Please login to see this page</h4>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+<div>
+<h3>  <td>{{ form.username.label_tag }}</td>
+<td>{{ form.username }}</td></h3>
+</div>
+<div>
+  <h3><td>{{ form.password.label_tag }}</td>
+  <td>{{ form.password }}</td></h3>
+</div>
+
+<div>
+  
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+  <input type="hidden" name="next" value="{{ next }}" />
+</div>
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<h5><a href="{% url 'password_reset' %}">Lost password?</a></h5>
+
+{% endblock %}

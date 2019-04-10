@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<html>
+<head>
+  <title> Myteam.dk</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.google.com/specimen/Open+Sans" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+
+/* Set a style for all buttons */
+button {
+    background-color: #767c01;
+    color: white;
+    padding: 10px 97px;
+    margin: 0px 20px;
+    border: 3px solid #303201;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color:#303201 !important;
+
+}
+
+.button li a:hover, .navbar-nav > .active > a {
+  background-color:#303201 !important;
+
+}
+
+
+
+
+/* navnar*/
+    .navbar {
+      margin-bottom: 50;
+      border-radius: 0;
+      background-color: #767c01;
+      border: 0;
+
+   }
+
+.nav.navbar-nav.navbar-right li a {
+    color: white;
+}
+
+.nav.navbar-brand li a {
+    color: white;
+}
+
+.collapse.navbar-collapse li a {
+    color: white;
+}
+
+
+.navbar-nav li a:hover, .navbar-nav > .active > a {
+  background-color:#303201 !important;
+
+}
+
+
+/* Text  */
+h1 {
+ font-family: 'Open Sans';
+ font-size: 59px;
+ line-height: 70px;
+}
+
+h2 {
+ font-family: 'Open Sans';
+  font-size: 14px;
+}
+
+
+h3 {
+ font-family: 'Open Sans';
+  font-size: 14px;
+     margin: 15px 20px;
+}
+
+h4 {
+ font-family: 'Open Sans';
+ font-size: 35px;
+ line-height: 60px;
+ margin:  10px
+}
+
+
+h5 {
+ font-family: 'Open Sans';
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+
+
+h6 {
+ font-family: 'Open Sans';
+ margin-left: 20px;
+ font-size: 20px;
+}
+
+body {
+    font-family: 'Open Sans';
+    font-size: 16px;
+}
+
+
+    /* Add a yellowish background color and some padding to the footer */
+footer {
+	right: 0;
+    bottom:0;
+    left:0;
+    background-color: #767c01;
+    padding: 0px;
+    color: white;
+    width: 100%;
+    height : 45px;
+    display: inline-block;
+}
+
+
+
+
+
+
+    /* Remove the jumbotron's default bottom margin */
+     .jumbotron {
+      background-color: #2c2c2c;
+      margin-bottom: 0;
+      padding: 2.5em 2em;
+
+    }
+p.small {
+    line-height: 0.7;
+}
+
+
+
+
+.slide1, .slide2, .slide3, .slide4, .slide5, .slide6, .slide7, .slide8, .slide9, .slide10, .slide11 {
+	min-height: 280px; /* Must have a height or min-height set due to use of background images*/
+	background-size: cover;
+	background-position: center center;
+}
+.slide1 {
+	background-image: url( "{% static '/images/pictures/IMG_090677.jpg'%}");
+}
+.slide2 {
+	background-image: url( "{% static '/images/pictures/IMG_C_9999_116.jpg'%}");
+}
+.slide3 {
+	background-image: url( "{% static '/images/pictures/IMG_C_9999_103.jpg'%}");
+}
+.slide4 {
+	background-image: url( "{% static '/images/pictures/IMG_C_9999_95.jpg'%}");
+}
+.slide5 {
+	background-image: url( "{% static '/images/pictures/IMG_C_9999_69.jpg'%}");
+}
+.slide6 {
+	background-image: url( "{% static '/images/pictures/IMG_C_9999_59.jpg'%}");
+}
+.slide7 {
+	background-image: url( "{% static '/images/pictures/IMG_C_9999_55.jpg'%}");
+}
+.slide8 {
+	background-image: url( "{% static '/images/pictures/IMG_090721.jpg'%}");
+}
+.slide9 {
+	background-image: url( "{% static '/images/pictures/IMG_C_9999_140.jpg'%}");
+}
+.slide10 {
+	background-image: url( "{% static '/images/pictures/IMG_090664.jpg'%}");
+}
+.slide11 {
+	background-image: url( "{% static '/images/pictures/IMG_090677.jpg'%}");
+
+
+
+
+
+}
+/* Carousel Fade Effect */
+.carousel.carousel-fade .item {
+	-webkit-transition: opacity 1s linear;
+	-moz-transition: opacity 1s linear;
+	-ms-transition: opacity 1s linear;
+	-o-transition: opacity 1s linear;
+	transition: opacity 1s linear;
+	opacity: .5;
+}
+.carousel.carousel-fade .active.item {
+	opacity: 1;
+}
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+	left: 0;
+	z-index: 2;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+/* Carousel Overlay */
+.carousel-overlay {
+	position: absolute;
+	bottom: 60px;
+}
+
+
+
+/* calender*/
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+/* Month header */
+.month {
+    padding: 20px 25px;
+    width: 100%;
+    background: #767c01;
+    text-align: center;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.3%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.3%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+
+
+
+
+
+
+.calendar h2 {
+    text-transform: uppercase;
+}
+
+.calendar thead {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.calendar tbody {
+    color: #7c8a95;
+}
+
+.calendar tbody td:hover {
+    border: 2px solid #c0392b;
+}
+
+.calendar tbody td.active {
+    border: 2px solid #c0392b;
+}
+
+.calendar td {
+    border: 2px solid transparent;
+    border-radius: 50%;
+    display: inline-block;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    width: 64px;
+}
+
+.current-day {
+    background: #c0392b;
+    color: #f9f9f9;
+}
+  </style>
+</head>
+
+
+
+
+<body>
+  <div class="jumbotron">
+    <div class="container-fluid text-left" >
+          <p style="color:white;  font-size:50px;" p class="small"> Myteam.dk
+          <p style="color:#75766d;" p class="small" > Et gratis online team værktøj. </p>
+    </div>
+  </div>
+
+  <!--begin bg-carousel-->
+  <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+  <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+          <div class="item active">
+              <div class="slide1"></div>
+          </div>
+          <div class="item">
+              <div class="slide2"></div>
+          </div>
+          <div class="item">
+              <div class="slide3"></div>
+          </div>
+      </div><!-- .carousel-inner -->
+
+  </div>
+{% block content %}
+
+<ul class="sidebar-nav">
+
+    ...
+
+   {% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   {% endif %}
+  </ul>
+{% endblock %}
+</body>
+<footer class="container-fluid text-left">
+  <h2>© 2018 Myteam.dk. All rights reserved</h2	>
+</footer>
+</html>

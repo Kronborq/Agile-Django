@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Frontpage{% endblock %}
+
+{% block content %}
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/about">About</a></li>
+         <li><a href="/gallery">Gallery</a></li>
+        <li class="active"><a href="/contact">Contact</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="/profile">My profile</a></li>
+        <li><a href="/team">My team</a></li>
+        {% endif %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+          <li><a href="/profile">  {{ user.get_username }}</a></li>
+          
+          <li><a href="{% url 'logout'%}?next={{request.path}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login'%}?next={{request.path}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+          <h1>Gallery</h1>
+
+</div>
+{% endblock %}

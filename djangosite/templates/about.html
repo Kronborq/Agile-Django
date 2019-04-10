@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block title %}Frontpage{% endblock %}
+
+{% block content %}
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Hjem</a></li>
+        <li class="active"><a href="/about">About</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="/profile">My profile</a></li>
+          <li><a href="/team">My team</a></li>
+        {% endif %}
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+          <li><a href="/profile">  {{ user.get_username }}</a></li>
+          
+          <li><a href="{% url 'logout'%}?next={{request.path}}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login'%}?next={{request.path}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+          <h1>Om Myteam.dk</h1>
+
+            <p>
+              <b>Konceptet</b><br>
+              Som skipper eller holdansvarlig har man vist alle oplevet at sidde
+              og sms'e rundt i et væk aftenerne op til træning eller stævner. Man kan 
+              eventuelt gøre det mere avanceret og sende regneark rundt, hvor folk så
+              kan tilmelde sig til de forskellige event.
+            </p>
+            <p>
+              Myteam.dk er forsøget på at kondencere alle disse regneark og forskellige 
+              mere eller mindre irriterende måder at samle og administrere hold på
+              i et samlet online værktøj.               
+            </p>
+            <p>
+              Online værktøjet giver en nem og overskuelig oversigt over hvor mange 
+              gaster der har meldt tilbage til de enkelte events. Samtidig ses det 
+              nemt om der er folk nok eller reserverne skal kaldes ind. Hvis brugerne 
+              ikke har meldt deres status inden en uge før eventet kan systemet
+              sættes til automatisk at udsende rykker mails. 
+            </p>
+            <p>
+              Herudover er der en række andre features som hjælper i administrationen 
+              af holdet. Administrationsværktøjet er samtidig en hjemmeside, som 
+              kan præsentere holdet, skrive nyheder, vise billeder - alt sammen online.
+            </p>
+            
+            <p>
+              <b>Features</b><br>
+              <ul class='contentList'>
+                <li><strong>Raceplanner</strong> med overblik over hvem fra holdet der deltager i hvilke events</li>
+                <li><strong>Regnskab</strong> hvor regnskabet fra eksempelvis et stævne bliver gjort op</li>
+                <li><strong>Let kommunikation</strong> med alle gaster på een gang</li>
+                <li><strong>Offentlig hjemmeside</strong> med 
+                  <ul class='subContentList'>
+                    <li>Billedgalleri</li>
+                    <li>Blog</li>
+                    <li>Links</li>
+                    <li>Holdopstilling</li>
+                    <li>Kommentarer</li>
+                  </ul>
+                </li>               
+              </ul>
+              <br>
+
+            </p> 
+            
+            <p>
+              <b>Historie</b><br>
+              Myteam.dk er et projekt, der i sin tid startede i irritation over 
+              ineffektive regneark der blev brug til hold administration. I samarbejde
+              med <a href='http://www.zuxu.dk'>Team Zuxu</a> (X99 hold) udvilkedes
+              den allerførste version af et online hold administrationssystem. 
+            </p>
+            <p> 
+              Senere blev konceptet generaliseret og udvidet til at andre hold 
+              kunne oprette sig på hjemmesiden. Samtidig blev der i samarbejde med 
+              <a href='http://www.myteam.dk/aja'>Team AJA</a> udviklet en række 
+              ekstra features så som links, blog, kommentarer, billedgalleri mm.  
+            </p>
+            <p>
+              Det pågående projekt er at få kodet siden sammen med en gaste database
+              således at skippere online har mulighed for at lede efter gaster
+              som kan sejle med dem til stævne eller evt finde en ny gast til 
+              faste træningsaftener og stævner.
+            </p>
+            
+            <p>
+              <b>Om udviklingsafdelingen</b><br>
+              Udviklingsafdelingen består af en enkel stakkels fordækker med alt
+              for meget fritid. Eller alt for tynde arme. I hvert fald er der brugt
+              en masse tid på at udvilke siden. Men jeg hygger mig med det. 
+            </p>
+            
+          </div>
+        </div>
+</div>
+{% endblock %}
