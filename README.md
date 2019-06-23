@@ -33,9 +33,11 @@ Although knowing exactly which tasks will becomes spikes, and the size of these 
 
 `createdb djangodb`<br><br>
 
-#### Installing and setting up Django
+#### Installing Django
 `pip3 install Django` <br> <br>
 
+
+#### If there is problems during your first installation, try the following
 *naviger ind i django projekt mappen (mt/djangosite)*
 
 `cd mt/djangosite`<br> <br>
